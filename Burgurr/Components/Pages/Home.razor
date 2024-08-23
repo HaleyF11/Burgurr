@@ -1,0 +1,23 @@
+﻿@page "/"
+
+
+<PageTitle>Burgurr</PageTitle>
+
+<h1>Burgers of the day</h1>
+<ul>
+    @foreach (var burger in burgers)
+    {
+        <li>@burger.Id</li>
+    }
+</ul>
+
+@code {
+    Burger[] burgers = new Burger[]
+       {
+       new Burger(),
+       new Burger()
+       {
+           Name = "yumby"
+       }
+       };
+}
