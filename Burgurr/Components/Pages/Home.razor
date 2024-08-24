@@ -9,7 +9,7 @@
 <ul>
     @foreach (var burger in burgers)
     {
-        <li>@burger.Id</li>
+        <li>@burger.Name</li>
     }
 </ul>
 
@@ -18,6 +18,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-         // burgers = await HttpClient.GetFromJsonAsync<List<Burger>>(NavigationManager.BaseUri + "specials");
+          burgers = await HttpClient.GetFromJsonAsync<List<Burger>>(NavigationManager.BaseUri + "burgers");
     } 
 }
