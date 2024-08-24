@@ -35,6 +35,8 @@
                     BasePrice = 10.99m
                 },
             };
+            db.Burgers.AddRange(burgers);
+            db.SaveChanges();
         }
     }
 }

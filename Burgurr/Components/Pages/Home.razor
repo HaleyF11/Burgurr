@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
 
 
 <PageTitle>Burgurr</PageTitle>
@@ -12,12 +14,10 @@
 </ul>
 
 @code {
-    Burger[] burgers = new Burger[]
-       {
-       new Burger(),
-       new Burger()
-       {
-           Name = "yumby"
-       }
-       };
+    List<Burger> burgers = new List<Burger>();
+
+    protected override async Task OnInitializedAsync()
+    {
+         // burgers = await HttpClient.GetFromJsonAsync<List<Burger>>(NavigationManager.BaseUri + "specials");
+    } 
 }
